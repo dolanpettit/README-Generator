@@ -42,8 +42,6 @@ A short and simple permissive license with conditions only requiring preservatio
 
 For any questions about the project, please feel free to reach out to me on github or via email. Thank you for viewing this project!
 
-github.com/dolanpettit
-
----
+https://github.com/dolanpettit
 
 dolanpettit@gmail.com
