@@ -112,3 +112,14 @@ const badges = {
   ["The Unlicense"]:
     "[![Generic badge](https://img.shields.io/badge/License-Unlicense-<COLOR>.svg)](https://shields.io/)",
 };
+
+// function to write README file
+function writeToFile(filename, data) {
+  fs.writeFile(filename, data, (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log("Succesfully wrote:" + filename);
+  });
+}
+
