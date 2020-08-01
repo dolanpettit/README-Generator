@@ -8,23 +8,19 @@ function generateMarkdown(answers) {
 
   
   # ${answers.Title}
-  
-  
-  
+
+    
+  **## Description **
+  ${answers.Description}
   
   
   ## Table of Contents
-  * [Description](#description)
   * [Installation instructions](#instillation)
   * [Usage information](#usage)
   * [License](#license)
   * [Contributors](#contributors)
   * [Test](#test)
   * [Questions](#questions)
-
-
-  ## Description
-  ${answers.Description}
 
 
   ## Installation instructions
