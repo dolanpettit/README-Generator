@@ -115,9 +115,9 @@ function generateMD(answers) {
 
 ${badges[answers.license]}
 
-**# ${answers.title}** 
+# ${answers.title}
 
-**## Description**
+## Description
 ${answers.description}
 
 **## Table of Contents**
