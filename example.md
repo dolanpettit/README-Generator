@@ -27,11 +27,12 @@ After the program has been installed, run it using node index. You will be promp
 
 ## Contribution
 
+
 Created by Dolan Pettit
 
 ## Test Instructions
 
-View my demo at the provided link: <a href='https://drive.google.com/file/d/1Ybposh0IqzvgROBR15MHIAyOJhn_9slv/view'></a>
+View my demo at the provided link:
 
 ## License
 
@@ -42,8 +43,6 @@ A short and simple permissive license with conditions only requiring preservatio
 
 For any questions about the project, please feel free to reach out to me on github or via email. Thank you for viewing this project!
 
-github.com/dolanpettit
-
----
+https://github.com/dolanpettit
 
 dolanpettit@gmail.com
