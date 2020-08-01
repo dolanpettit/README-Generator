@@ -1,55 +1,52 @@
-// function to generate markdown for README
-function generateMarkdown(answers) {
-  return `
+// const badges = require("../index");
+// const license = require("../index");
+// // function to generate markdown for README
+// function generateMarkdown(answers) {
+//   return `
 
-  [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) 
+//   [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 
-  ${badges[answers.License]}
+//   ${badges[answers.license]}
 
-  
-  # ${answers.Title}
+//   # ${answers.title}
 
-    
-  **## Description **
-  ${answers.Description}
-  
-  
-  ## Table of Contents
-  * [Installation instructions](#instillation)
-  * [Usage information](#usage)
-  * [License](#license)
-  * [Contributors](#contributors)
-  * [Test](#test)
-  * [Questions](#questions)
+//   **## Description **
+//   ${answers.description}
 
+//   ## Table of Contents
+//   * [Installation instructions](#instillation)
+//   * [Usage information](#usage)
+//   * [License](#license)
+//   * [Contributors](#contributors)
+//   * [Test](#test)
+//   * [Questions](#questions)
 
-  ## Installation instructions
-  ${answers.Installation}
-  
-  ## Usage information
-  ${answers.Usage}
-  
+//   ## Installation instructions
+//   ${answers.installation}
 
-  ## License
-  ${answers.License}  
-  
-  ## Contributors
-  ${answers.Contributors}
+//   ## Usage information
+//   ${answers.usage}
 
-  ## Test
-  ${answers.Test}
-  
-  ## Questions
+//   ## License
+//   ${answers.license}
 
-  For any questions about the project, please feel free to reach out to me on github or via email.  Thank you for viewing this project!
+//   ## Contributors
+//   ${answers.contributors}
 
-  Contact me: 
+//   ## Test
+//   ${answers.test}
 
-  Github:[${answers.Username}]()
-  
-  Email:[${answers.Email}]()
+//   ## Questions
 
-  `;
-}
+//   For any questions about the project, please feel free to reach out to me on github or via email.  Thank you for viewing this project!
 
-module.exports = generateMarkdown;
+//   Contact me:
+
+//   Github: [${answers.username}]()
+
+//   Email: [${answers.email}]()
+
+//   `;
+// }
+
+// module.exports = generateMarkdown;

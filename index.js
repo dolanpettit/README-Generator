@@ -1,73 +1,68 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./assets/generateMD");
+const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// array of questions for user
-const questions = [
-  {
-    type: "input",
-    message: "What is your project title?",
-    name: "Title",
-  },
-  {
-    type: "input",
-    message: "Describe your project:",
-    name: "Description",
-  },
-  {
-    type: "input",
-    message: "What are the steps required to install your project?",
-    name: "Instillation",
-  },
-  {
-    type: "input",
-    message: "Provide instructions for use:",
-    name: "Usage",
-  },
-  {
-    type: "input",
-    message: "Contributors?",
-    name: "Contributors",
-  },
-  {
-    type: "input",
-    message: "How do you test your project?",
-    name: "Test",
-  },
-  {
-    type: "list",
-    message: "Select license",
-    name: "License",
-    choices: [
-      "GNU AGPLv3",
-      "GNU GPLv3",
-      "GNU LPGLv3",
-      "Mozilla Public License 2.0",
-      "Apache License 2.0",
-      "MIT License",
-      "Boost Software License 1.0",
-      "The Unlicense",
-    ],
-  },
-  {
-    type: "input",
-    message: "Contact info for further questions:",
-    name: "Questions",
-  },
-  {
-    type: "input",
-    message: "Your github username:",
-    name: "Username",
-  },
-  {
-    type: "input",
-    message: "Your email:",
-    name: "Email",
-  },
-];
-
+function promptUser(answers) {
+  return inquirer.prompt([
+    {
+      type: "input",
+      message: "Enter title of project",
+      name: "title",
+    },
+    {
+      type: "input",
+      message: "Description of project",
+      name: "description",
+    },
+    {
+      type: "input",
+      message: "How do you install the project?",
+      name: "installation",
+    },
+    {
+      type: "input",
+      message: "Provide instructions for use",
+      name: "usage",
+    },
+    {
+      type: "input",
+      message: "Test Instructions",
+      name: "test",
+    },
+    {
+      type: "input",
+      message: "List your collaborators ",
+      name: "credits",
+    },
+    {
+      type: "list",
+      name: "license",
+      message: "What types of licenses?",
+      choices: [
+        "GNU AGPLv3",
+        "GNU GPLv3",
+        "GNU LPGLv3",
+        "Mozilla Public License 2.0",
+        "Apache License 2.0",
+        "MIT License",
+        "Boost Software License 1.0",
+        "The Unlicense",
+      ],
+    },
+    {
+      type: "input",
+      message: "Your github link",
+      name: "github",
+    },
+    {
+      type: "input",
+      message: "You email address",
+      name: "email",
+    },
+  ]);
+}
 const license = {
   ["GNU AGPLv3"]:
     "Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available.",
@@ -113,24 +108,58 @@ const badges = {
     "[![Generic badge](https://img.shields.io/badge/License-Unlicense-<COLOR>.svg)](https://shields.io/)",
 };
 
-// function to write README file
-function writeToFile(filename, data) {
-  fs.writeFile(filename, data, (err) => {
-    if (err) {
-      throw err;
-    }
-    console.log("Succesfully wrote:" + filename);
-  });
+function generateMD(answers) {
+  return `
+  
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org) 
+
+${badges[answers.license]}
+
+**# ${answers.title}** 
+
+**## Description**
+${answers.description}
+
+**## Table of Contents**
+1. [Installation Instructions](#installation-instructions)
+2. [Usage Information](#usage-information)
+3. [Contributors](#contributors)
+4. [Test Instructions](#test-instructions)
+5. [License](#license)
+6. [Questions](#questions)
+
+## Installation Instructions
+${answers.installation}
+
+## Usage Information
+${answers.usage}
+
+## Contribution
+${answers.credits}
+
+## Test Instructions
+${answers.test}
+
+## License
+*${answers.license}*
+${license[answers.license]}
+
+# Questions
+For any questions about the project, please feel free to reach out to me on github or via email.  Thank you for viewing this project!
+${answers.github}
+${answers.email}
+  `;
 }
 
-// function to initialize program
-function init() {
-  inquirer.prompt(questions).then((answers) => {
-    const response = generateMarkdown(answers);
-    console.log(answers);
-    writeToFile("README.md", response);
-  });
-}
+promptUser()
+  .then(function (answers) {
+    const markdown = generateMD(answers);
 
-// function call to initialize program
-init();
+    return writeFileAsync("README.md", markdown);
+  })
+  .then(function () {
+    console.log("Successfully wrote to README.md");
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
