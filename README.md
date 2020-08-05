@@ -31,7 +31,7 @@ Created by Dolan Pettit
 
 ## Test Instructions
 
-View my demo at the provided link: <a href='https://drive.google.com/file/d/1Ybposh0IqzvgROBR15MHIAyOJhn_9slv/view'>https://drive.google.com/file/d/1Ybposh0IqzvgROBR15MHIAyOJhn_9slv/view</a>
+View my demo: <a href='https://drive.google.com/file/d/1Ybposh0IqzvgROBR15MHIAyOJhn_9slv/view'>https://drive.google.com/file/d/1Ybposh0IqzvgROBR15MHIAyOJhn_9slv/view</a>
 
 ## License
 
@@ -40,7 +40,7 @@ A short and simple permissive license with conditions only requiring preservatio
 
 # Questions
 
-For any questions about the project, please feel free to reach out to me on github or via email. Thank you for viewing this project!
+For any questions about the assignment, please feel free to reach out to me on github or via email. Thank you for viewing this application!
 
 https://github.com/dolanpettit
 
