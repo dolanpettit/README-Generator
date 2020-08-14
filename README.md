@@ -40,7 +40,7 @@ A short and simple permissive license with conditions only requiring preservatio
 
 # Questions
 
-For any questions about the assignment, please feel free to reach out to me on github or via email. Thank you for viewing this application!
+For any questions about the assignment, please feel free to reach out to me on github or via email. Thanks for viewing this application.
 
 https://github.com/dolanpettit
 
